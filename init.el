@@ -12,7 +12,7 @@
 
 ;;;; Carga de configuración
 (load (concat emacs-dir "configuracion/cfg-iniciar"))
-(load (concat usuario-dir "entorno-carlos"))
+(load (concat usuario-dir "entorno-base"))
 
 
 ;;;; tiempo de carga - finalizar
