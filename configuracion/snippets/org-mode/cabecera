@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: cabecera
+# key: cab
+# --
+#+TITLE: $1
+#+STARTUP: content indent
+$0

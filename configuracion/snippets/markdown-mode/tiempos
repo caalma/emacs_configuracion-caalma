@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: tiempos
+# key: tiempos
+# --
+# -------------------------------------------------- TIEMPOS
+`(instante-fecha)` --- $1 -------------------------- `(instante)`$0
