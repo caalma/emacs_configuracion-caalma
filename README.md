@@ -1,2 +1,2 @@
-# emacs_configuracion-caalma
-Configuración personal para Emacs
+# Configuración personal para Emacs
+
