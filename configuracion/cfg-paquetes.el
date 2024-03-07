@@ -373,8 +373,61 @@
   (setq py-split-window-on-execute nil))
 
 ;;;; Spray - Lectura veloz
-(use-package spray
-  :defer 5)
+;(use-package spray  :defer 5)
 
 
-;;; cfg-paquetes.el ends here
+;;;; pomidor - timer de tecnica pomodro
+(use-package pomidor
+  :defer 5
+  :bind (("<f12>" . pomidor))
+  :config (setq pomidor-sound-tick nil
+                pomidor-sound-tack nil
+                pomidor-seconds (* 25 60)
+                pomidor-break-seconds (* 5 60)
+                pomidor-breaks-before-long 4
+                pomidor-long-break-seconds (* 20 60)
+                )
+  :hook (pomidor-mode . (lambda ()
+                          (display-line-numbers-mode -1) ; Emacs 26.1+
+                          (setq left-fringe-width 0 right-fringe-width 0)
+                          (setq left-margin-width 2 right-margin-width 0)
+                          ;; force fringe update
+                          (set-window-buffer nil (current-buffer)))))
+
+
+;; ;; This assumes you've installed the package via MELPA.
+;; (use-package ligature
+;;   :config
+;;   ;; Enable the "www" ligature in every possible major mode
+;;   (ligature-set-ligatures 't '("www"))
+;;   ;; Enable traditional ligature support in eww-mode, if the
+;;   ;; `variable-pitch' face supports it
+;;   (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+;;   ;; Enable all Cascadia Code ligatures in programming modes
+;;   (ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+;;                                        ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+;;                                        "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+;;                                        "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+;;                                        "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+;;                                        "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+;;                                        "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+;;                                        "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+;;                                        ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+;;                                        "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+;;                                        "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+;;                                        "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+;;                                        "\\\\" "://"))
+;;   ;; Enables ligature checks globally in all buffers. You can also do it
+;;   ;; per mode with `ligature-mode'.
+;;   (global-ligature-mode t))
+
+
+;; ;;;; typst
+;; (use-package polymode)
+;; (use-package rx)
+;; (push (expand-file-name "modules/languages/typst-mode" user-emacs-directory) load-path)
+;; (require 'typst-mode)
+
+
+
+;; cfg-paquetes.el ends here

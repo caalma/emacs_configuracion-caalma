@@ -1,0 +1,3 @@
+#!/bin/bash
+
+emacsclient27 -n -a emacs27 $@ &

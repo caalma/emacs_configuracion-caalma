@@ -64,7 +64,6 @@
 (tool-bar-mode 0) ; desabilitación de la barra de herramientas
 (tooltip-mode 0) ; deshabilita la ayuda de texto en botones gui
 
-
 ;;;; carga de archivos
 (setq
  gc-cons-threshold 50000000  ; reduccion de frecuencia de actualización de garbage collection, hasta alcanzar 50Mb

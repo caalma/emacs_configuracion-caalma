@@ -3,25 +3,27 @@
 ;; Aquí deben colocarse las personalizaciones de inicio
 ;; Por ejemplo.
 
+;;; archivos de uso básico
+(if t
+    (progn
+      (setq
+       initial-scratch-message "* NOTAS \n\n"
+       initial-major-mode 'org-mode
+       )
 
-(setq
- initial-scratch-message "* NOTAS \n\n"
- initial-major-mode 'org-mode
- )
+      ;; carga de documentos básicos
+      (find-file "~/tareas.org")
 
-;; carga de documentos básicos
-(find-file "~/tareas.org")
+      ;; composición inicial de ventana
+      (switch-to-buffer "tareas.org")
 
-;; composición inicial de ventana
-(split-window-right)
-(switch-to-buffer "tareas.org")
-(other-window 1)
-(switch-to-buffer "*scratch*")
-(other-window 1)
+      ;; activar modo deamon - server
+      (server-start)
 
-;; tipografia
-(set-face-attribute 'default nil :font "Consolas" :height 130)
-(set-frame-font "Consolas" nil t)
+      ;; tipografia
+      (set-face-attribute 'default nil :font "Consolas" :height 100)
+      (set-frame-font "Consolas" nil t)
 
+      ))
 
 ;;; entorno.el ends here

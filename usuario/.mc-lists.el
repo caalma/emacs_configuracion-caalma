@@ -3,41 +3,39 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        beginning-of-visual-line
+        c-electric-pound
         clm:web-page-title-at-point
         clm:yt-title-at-point
+        comment-line
         counsel-M-x
         counsel-yank-pop
-        downcase-region
         end-of-visual-line
-        hungry-delete-backward
+        eval-last-sexp
         hungry-delete-forward
-        ido-switch-buffer
         indent-for-tab-command
         kill-region
         kill-visual-line
-        markdown-cycle
         markdown-outdent-or-delete
         org-beginning-of-line
+        org-cycle
         org-end-of-line
-        org-force-cycle-archived
         org-kill-line
+        org-metaleft
         org-open-at-point
-        org-open-line
         org-return-indent
         org-self-insert-command
         org-yank
+        overwrite-mode
         py-electric-colon
         py-electric-comment
-        py-indent-or-complete
         swiper
-        text-scale-decrease
-        text-scale-increase
         yaml-electric-dash-and-dot
+        beginning-of-visual-line
+        hungry-delete-backward
+        query-replace
+        yaml-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once
       '(
-        py-hungry-delete-backwards
-        yaml-electric-backspace
         ))
